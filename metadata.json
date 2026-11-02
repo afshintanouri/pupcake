@@ -1,0 +1,6 @@
+{
+  "name": "Pupcake Adelaide",
+  "description": "Bespoke dog birthday cakes handcrafted with human-grade organic ingredients and edible pup photo prints. Delivered fresh across Adelaide metro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

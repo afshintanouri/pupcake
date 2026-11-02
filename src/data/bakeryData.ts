@@ -1,0 +1,378 @@
+import {
+  ProteinOption,
+  CarbOption,
+  FrostingOption,
+  ToppingOption,
+  ShapeOption,
+  SizeOption,
+  AdelaideSuburb,
+  Testimonial,
+  CustomCakeConfig
+} from '../types/cake';
+
+export const SHAPE_OPTIONS: ShapeOption[] = [
+  {
+    id: 'round',
+    name: 'Classic Celebration Round',
+    description: 'Double-tier round cake with piped border — ideal for holding an edible wafer photo print.',
+    recommendedFor: 'Best for photo prints & grand birthday parties',
+    svgPath: 'M50,15 A35,35 0 1,1 49.9,15 Z',
+  },
+  {
+    id: 'bone',
+    name: 'Signature Doggy Bone',
+    description: 'Generous bone contour lined with crunchy liver biscuits and creamy rosettes.',
+    recommendedFor: 'Iconic dog birthday classic, great for photo ops',
+    svgPath: 'M25,35 C15,25 15,45 25,45 C25,45 75,45 75,45 C85,45 85,25 75,35 Z',
+  },
+  {
+    id: 'paw',
+    name: 'Giant Paw Print',
+    description: 'Sculpted central pad with four berry-filled paw toe medallions.',
+    recommendedFor: 'Fun to portion out for multi-dog playdates',
+    svgPath: 'paw-path',
+  },
+  {
+    id: 'heart',
+    name: 'Fur-Baby Love Heart',
+    description: 'Tender heart contour dedicated to Adelaide’s most cherished pup child.',
+    recommendedFor: 'Gotcha day milestones & unconditional doodle love',
+    svgPath: 'heart-path',
+  },
+  {
+    id: 'pup_head',
+    name: 'Fluffy Pup Silhouette',
+    description: 'Round head with adorable floppy doodle ears piped in textured frosting.',
+    recommendedFor: 'Cavoodles, Groodles & Labradoodles',
+    svgPath: 'head-path',
+  },
+];
+
+export const SIZE_OPTIONS: SizeOption[] = [
+  {
+    id: 'mini',
+    name: 'The Pup Cup Petite',
+    diameter: '4 inch / 10 cm',
+    servings: '1-2 Dogs (or 2-3 meal treats)',
+    dogWeightGuide: 'Toy & Small Pups (under 10kg)',
+    basePrice: 42,
+    weightGrams: 350,
+  },
+  {
+    id: 'medium',
+    name: 'The Party Hound (Most Popular)',
+    diameter: '6 inch / 15 cm',
+    servings: '4-6 Dog Friends (or big family slice-and-freeze)',
+    dogWeightGuide: 'Cavoodles, Spoodles, Medium Doodles (10-25kg)',
+    basePrice: 58,
+    weightGrams: 650,
+  },
+  {
+    id: 'large',
+    name: 'The Big Bark Celebration',
+    diameter: '8 inch / 20 cm',
+    servings: '8-12 Dog Friends (Park paw-ty pack)',
+    dogWeightGuide: 'Standard Groodles, Labradoodles & Golden Packs',
+    basePrice: 76,
+    weightGrams: 1100,
+  },
+];
+
+export const PROTEIN_OPTIONS: ProteinOption[] = [
+  {
+    id: 'kangaroo',
+    name: 'SA Wild Kangaroo & Sweet Potato',
+    subtitle: 'Wild-harvested South Australian Roo',
+    description: 'Ultra-lean, novel single-protein meat loaded with conjugated linoleic acid, zinc, and iron. Highly hypoallergenic and ideal for sensitive doodle bellies.',
+    caloriesPer100g: 135,
+    proteinPct: 22,
+    highlight: 'Hypoallergenic & Ultra-Lean',
+    badge: 'SA Local Wild Harvest',
+    priceModifier: 4,
+  },
+  {
+    id: 'chicken',
+    name: 'Free-Range Adelaide Hills Chicken & Pumpkin',
+    subtitle: 'Mount Lofty foothills pasture-raised',
+    description: 'Tender free-range chicken breast slowly simmered with digestive-friendly organic butternut pumpkin. Light, soothing, and easily digestible.',
+    caloriesPer100g: 145,
+    proteinPct: 20,
+    highlight: 'Gentle on Sensitive Stomachs',
+    badge: 'Adelaide Hills Free-Range',
+    priceModifier: 0,
+  },
+  {
+    id: 'beef',
+    name: 'Grass-Fed Angus Beef & Baby Spinach',
+    subtitle: 'South Coast pasture-fed prime mince',
+    description: 'Nutrient-dense grass-fed beef layered with steamed iron-rich baby spinach. Irresistible aroma and hearty savoury depth dogs go wild for.',
+    caloriesPer100g: 170,
+    proteinPct: 21,
+    highlight: 'High Iron & B-Vitamins',
+    badge: '100% Grass-Fed Angus',
+    priceModifier: 2,
+  },
+  {
+    id: 'salmon',
+    name: 'Tasmanian Salmon & Golden Chia',
+    subtitle: 'Sustainably farmed omega powerhouse',
+    description: 'Rich in vital Omega-3 fatty acids EPA & DHA to promote glossy coats, reduce itchiness, and support joint mobility in active doodles.',
+    caloriesPer100g: 165,
+    proteinPct: 19,
+    highlight: 'Glossy Coat & Joint Care',
+    badge: 'Omega-3 Superfood',
+    priceModifier: 6,
+  },
+  {
+    id: 'peanut_butter',
+    name: 'Roasted Peanut Butter & Ripe Banana Loaf',
+    subtitle: '100% pure roasted peanuts (Xylitol-free)',
+    description: 'Decadent vegetarian protein base prepared with pure unsalted peanuts, mashed ripe bananas, and organic cinnamon. High in healthy fats and vitamin E.',
+    caloriesPer100g: 180,
+    proteinPct: 14,
+    highlight: 'Vegetarian & High Energy',
+    badge: 'Xylitol-Free Guaranteed',
+    priceModifier: 0,
+  },
+];
+
+export const CARB_OPTIONS: CarbOption[] = [
+  {
+    id: 'oats_rice',
+    name: 'Organic Rolled Oats & Brown Rice',
+    description: 'Slow-burning, heart-healthy fiber that provides clean digestion and soft cake crumb structure.',
+    glutenFree: true,
+    grainFree: false,
+  },
+  {
+    id: 'quinoa_flax',
+    name: 'Ancient Quinoa & Golden Flaxseed',
+    description: 'Grain alternative rich in plant-based amino acids and essential lignans for healthy skin.',
+    glutenFree: true,
+    grainFree: false,
+  },
+  {
+    id: 'grain_free',
+    name: '100% Grain-Free Coconut & Pumpkin',
+    description: 'Zero grains, zero wheat, zero corn. Made purely with organic coconut flour and Adelaide roasted pumpkin.',
+    glutenFree: true,
+    grainFree: true,
+  },
+];
+
+export const FROSTING_OPTIONS: FrostingOption[] = [
+  {
+    id: 'greek_yogurt',
+    name: 'Ivory Whipped Greek Yoghurt & Cream Cheese',
+    description: 'Lactose-free, smooth whipped cream cheese base enriched with gut-friendly probiotic yoghurt.',
+    hex: '#FDFBF7',
+    accentHex: '#E8E1D5',
+    naturalColorSource: 'Pure Lactose-Free Cultured Dairy',
+  },
+  {
+    id: 'turmeric_gold',
+    name: 'Golden Turmeric & Goat’s Curd',
+    description: 'Warm sunshine glow colored naturally with antioxidant turmeric root and soothing South Australian goat curd.',
+    hex: '#F9D776',
+    accentHex: '#E3B940',
+    naturalColorSource: 'Organic Turmeric & Curcumin',
+  },
+  {
+    id: 'beet_blush',
+    name: 'Adelaide Beetroot Blush Rose',
+    description: 'Joyful pastel pink icing tinted with cold-pressed organic red beet juice. 100% chemical-dye free.',
+    hex: '#F2B8C6',
+    accentHex: '#DE8B9F',
+    naturalColorSource: 'Cold-Pressed Adelaide Hills Beetroot',
+  },
+  {
+    id: 'spirulina_green',
+    name: 'Meadow Green Spirulina & Parsley',
+    description: 'Refreshing pastel mint icing made with superfood spirulina and fresh breath chlorophyll.',
+    hex: '#BCE3C5',
+    accentHex: '#89C696',
+    naturalColorSource: 'Organic Blue-Green Spirulina & Parsley',
+  },
+  {
+    id: 'carob_swirl',
+    name: 'Artisan Carob ‘Dog Chocolate’',
+    description: 'Rich roasty chocolate-brown frosting made from roasted Australian carob pods. 100% theobromine & caffeine free.',
+    hex: '#7A5230',
+    accentHex: '#523419',
+    naturalColorSource: 'Roasted Australian Carob Pods',
+  },
+];
+
+export const TOPPING_OPTIONS: ToppingOption[] = [
+  {
+    id: 'fresh_blueberries',
+    name: 'Fresh Adelaide Hills Blueberries',
+    description: 'Hand-picked antioxidant superfood gems arranged on top of the frosting.',
+    price: 3,
+    category: 'berries',
+    icon: '🫐',
+  },
+  {
+    id: 'fresh_strawberries',
+    name: 'Hahndorf Sweet Strawberries',
+    description: 'Fresh sliced South Australian strawberries rich in Vitamin C and sweet aromas.',
+    price: 3,
+    category: 'berries',
+    icon: '🍓',
+  },
+  {
+    id: 'liver_biscuit_rim',
+    name: 'Crunchy Liver Biscuit Picket Border',
+    description: 'Mini house-baked dehydrated beef liver biscuits framing the base of the cake.',
+    price: 5,
+    category: 'crunch',
+    icon: '🦴',
+  },
+  {
+    id: 'carob_bones',
+    name: 'Dipped Carob Bone Treats',
+    description: 'Crunchy peanut butter bone cookies dipped in decadent dog-safe carob.',
+    price: 4,
+    category: 'crunch',
+    icon: '🍪',
+  },
+  {
+    id: 'edible_flowers',
+    name: 'Edible Organic Petals (Marigold & Cornflower)',
+    description: 'Pasture-grown culinary flower petals safe for dog consumption, giving fairy-tale aesthetics.',
+    price: 3,
+    category: 'special',
+    icon: '🌸',
+  },
+  {
+    id: 'gold_candle',
+    name: 'Keepsake Gold Number Candle + Biscuit Stick',
+    description: 'Food-safe sparkling gold number candle for human photo moment with safe biscuit plug.',
+    price: 4,
+    category: 'special',
+    icon: '🕯️',
+  },
+];
+
+export const ADELAIDE_SUBURBS: AdelaideSuburb[] = [
+  { name: 'Adelaide CBD', postcode: '5000', zone: 'Metro Central', deliveryFee: 0, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'North Adelaide', postcode: '5006', zone: 'Metro Central', deliveryFee: 0, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Norwood', postcode: '5067', zone: 'Metro East', deliveryFee: 8, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Unley', postcode: '5061', zone: 'Metro South', deliveryFee: 8, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Hyde Park', postcode: '5061', zone: 'Metro South', deliveryFee: 8, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Prospect', postcode: '5082', zone: 'Metro North', deliveryFee: 8, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Burnside', postcode: '5066', zone: 'Metro East', deliveryFee: 10, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Glenelg', postcode: '5045', zone: 'Metro West', deliveryFee: 10, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Henley Beach', postcode: '5022', zone: 'Metro West', deliveryFee: 10, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Semaphore', postcode: '5019', zone: 'Metro West', deliveryFee: 12, availableDays: ['Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Walkerville', postcode: '5081', zone: 'Metro North', deliveryFee: 8, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Parkside', postcode: '5063', zone: 'Metro South', deliveryFee: 8, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Goodwood', postcode: '5034', zone: 'Metro South', deliveryFee: 8, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Mile End', postcode: '5031', zone: 'Metro West', deliveryFee: 8, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Bowden', postcode: '5007', zone: 'Metro North', deliveryFee: 8, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Mawson Lakes', postcode: '5095', zone: 'Metro North', deliveryFee: 12, availableDays: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Marion', postcode: '5043', zone: 'Metro South', deliveryFee: 10, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Mitcham', postcode: '5062', zone: 'Metro South', deliveryFee: 10, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Campbelltown', postcode: '5074', zone: 'Metro East', deliveryFee: 10, availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Crafers / Stirling (Hills Edge)', postcode: '5152', zone: 'Adelaide Hills Edge', deliveryFee: 14, availableDays: ['Friday', 'Saturday', 'Sunday'] },
+  { name: 'Blackwood', postcode: '5051', zone: 'Metro South', deliveryFee: 12, availableDays: ['Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+  { name: 'Golden Grove', postcode: '5125', zone: 'Metro North', deliveryFee: 14, availableDays: ['Tuesday', 'Thursday', 'Saturday'] },
+];
+
+export const POPULAR_DOODLE_BREEDS = [
+  'Cavoodle (King Charles x Poodle)',
+  'Groodle / Goldendoodle (Golden Retriever x Poodle)',
+  'Labradoodle (Labrador x Poodle)',
+  'Australian Cobberdog',
+  'Spoodle / Cockapoo (Cocker Spaniel x Poodle)',
+  'Maltipoo (Maltese x Poodle)',
+  'Bordoodle (Border Collie x Poodle)',
+  'Bernedoodle (Bernese Mountain Dog x Poodle)',
+  'Poodle (Standard / Miniature / Toy)',
+  'Other Spoiled Good Boy / Girl',
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: 't1',
+    dogName: 'Barnaby',
+    breed: 'Apricot Cavoodle',
+    suburb: 'Norwood, Adelaide',
+    ownerNames: 'Sarah & Liam H.',
+    quote: 'Barnaby is our whole world and turning 2 was a major event in our house! The wild kangaroo cake with his face printed on the wafer had all our human friends in tears laughing. Barnaby devoured two slices and his tummy was 100% happy.',
+    rating: 5,
+    cakeOrdered: 'Party Hound (6") Kangaroo & Sweet Potato with Edible Photo Print',
+    dogAge: 2,
+  },
+  {
+    id: 't2',
+    dogName: 'Winston & Clementine',
+    breed: 'Australian Labradoodles',
+    suburb: 'North Adelaide',
+    ownerNames: 'Dr. Marcus & Elena P.',
+    quote: 'As veterinarians ourselves, we are hyper-vigilant about dog nutrition. No xylitol, zero refined sugar, South Australian free-range chicken and real berries. It smells like a roast dinner baked in a patisserie. Exceptional Adelaide service!',
+    rating: 5,
+    cakeOrdered: 'The Big Bark (8") Free-Range Chicken with Liver Biscuit Border',
+    dogAge: 3,
+  },
+  {
+    id: 't3',
+    dogName: 'Maple',
+    breed: 'Standard Groodle',
+    suburb: 'Hyde Park, Adelaide',
+    ownerNames: 'Jessica T.',
+    quote: 'We don’t have kids yet so Maple gets all our celebration energy! The bone cake looked even more stunning in real life than on Instagram. The refrigerated courier texted 15 minutes before arrival and the cake arrived in perfect condition.',
+    rating: 5,
+    cakeOrdered: 'Signature Bone Cake in Tasmanian Salmon & Golden Chia',
+    dogAge: 1,
+  },
+];
+
+export const FAQ_ITEMS = [
+  {
+    question: 'Are your dog birthday cakes 100% safe and human-grade?',
+    answer: 'Yes! Every ingredient we use is certified 100% human-grade. In fact, our head baker routinely taste-tests every single batch. We never use xylitol, refined white sugars, table salts, synthetic dyes, artificial preservatives, or onions/garlic. Our cakes are made with lean South Australian meats, fresh vegetables, organic oats or coconut flour, and dog-safe low-lactose cream cheese and Greek yoghurt.',
+  },
+  {
+    question: 'How does the custom edible dog photo printing work?',
+    answer: 'We print your pup’s photograph directly onto an all-natural edible wafer sheet crafted from potato starch, olive oil, and water. The printer uses certified dog-safe vegetable-based food inks (derived from spirulina, beet, and turmeric pigments). It softens gracefully into the frosting and dogs eat it with absolute joy!',
+  },
+  {
+    question: 'What Adelaide suburbs do you deliver to, and when?',
+    answer: 'We deliver across the entire Adelaide Metropolitan area — from Semaphore and Henley Beach in the West, through Adelaide CBD, North Adelaide, Norwood, Unley, and Burnside, up to Mawson Lakes and down to Marion/Mitcham. Delivery is carried out in refrigerated food transport containers. You can choose between Morning (8:00 AM – 12:00 PM) or Afternoon (1:00 PM – 5:00 PM) windows.',
+  },
+  {
+    question: 'How far in advance should I place our order?',
+    answer: 'Because all our cakes are baked fresh to order and contain zero chemical preservatives, we recommend ordering at least 48 to 72 hours in advance. For weekend paw-ties, booking 4-5 days ahead guarantees your desired delivery time slot.',
+  },
+  {
+    question: 'How long does the cake stay fresh, and can I freeze slices?',
+    answer: 'Keep the cake refrigerated until party time! Once received, the cake stays fresh in your fridge for 3 to 4 days. You can also portion any leftover cake into slices, wrap them in wax paper or airtight containers, and freeze them for up to 3 months for delicious weekly treat rewards.',
+  },
+  {
+    question: 'My doodle has a delicate stomach. Which recipe do you recommend?',
+    answer: 'Doodles are famously known for their sensitive digestion! We specifically formulated our SA Wild Kangaroo & Sweet Potato base paired with 100% Grain-Free Coconut & Pumpkin for hypoallergenic pups. Kangaroo is an ultra-lean novel protein that rarely triggers allergic histamine responses.',
+  },
+  {
+    question: 'Can I pick up the cake directly instead of delivery?',
+    answer: 'Yes! You can select free local studio pickup from our North Adelaide patisserie kitchen (88 O’Connell St, North Adelaide). Pickup is ready from 9:00 AM on your requested date.',
+  },
+];
+
+export const DEFAULT_CAKE_CONFIG: CustomCakeConfig = {
+  shape: 'round',
+  size: 'medium',
+  protein: 'kangaroo',
+  carb: 'oats_rice',
+  frosting: 'greek_yogurt',
+  toppings: ['fresh_blueberries', 'liver_biscuit_rim'],
+  pupName: 'Barnaby',
+  pupAge: 2,
+  pupBreed: 'Cavoodle',
+  biscuitMessage: 'Happy 2nd Birthday Barnaby!',
+  hasPhotoPrint: true,
+  photoUrl: null, // Will use sample doodle portrait or uploaded photo
+  photoScale: 1,
+  includeCandle: true,
+  specialDietaryNotes: '',
+};
