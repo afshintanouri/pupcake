@@ -95,7 +95,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollTo }) => {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 aspect-4/3 lg:aspect-square">
               <img
                 src={bakeryImages.heroDoodle}
-                alt="Fluffy Cavoodle wearing birthday party hat next to custom dog birthday cake in Adelaide"
+                alt="Fluffy Doodle wearing birthday party hat next to custom dog birthday cake in Adelaide"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -109,7 +109,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollTo }) => {
                       Birthday Hero
                     </span>
                     <p className="text-sm font-bold text-[#2C2723]">
-                      Archie the Cavoodle · 1st Birthday
+                      Archie the Doodle · 1st Birthday
                     </p>
                   </div>
                   <span className="text-xs font-extrabold text-[#2D5A43] bg-emerald-50 px-2.5 py-1 rounded-lg">
